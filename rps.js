@@ -15,9 +15,6 @@ function play(playerSelection,computerSelection) {
     computerSelection = getComputerChoice();
     let playChoice = window.prompt("Enter your move below");
     playerSelection = playChoice;
-    let rock = new RegExp(/(rock)/, 'gi');
-    let paper = new RegExp(/(paper)/, 'gi');
-    let scissors = new RegExp(/(scissors?)/, 'gi');
     
     if (playChoice.toLowerCase() === "rock") {
         return "You play rock";
