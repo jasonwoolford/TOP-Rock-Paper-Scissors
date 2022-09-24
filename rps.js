@@ -3,10 +3,29 @@ function getComputerChoice(choice) {
 
     switch (choice) {
         case 1:
-            return "Rocks!";
+            return "Rock!";
         case 2:
             return "Paper!";
         case 3:
             return "Scissors!";
     }
 }
+
+function play(playerSelection,computerSelection) {
+    computerSelection = getComputerChoice();
+    let playChoice = window.prompt("Enter your move below");
+    playerSelection = playChoice;
+    let rock = new RegExp(/(rock)/, 'gi');
+    let paper = new RegExp(/(paper)/, 'gi');
+    let scissors = new RegExp(/(scissors?)/, 'gi');
+    
+    if (playChoice.toLowerCase() === "rock") {
+        return "You play rock";
+    } else if (playChoice.toLowerCase() === "paper") {
+        return "You play paper";
+    } else if (playChoice.toLowerCase() === "scissors") {
+        return "You play scissors";
+    } else {
+        return "What?";
+    }
+    }
