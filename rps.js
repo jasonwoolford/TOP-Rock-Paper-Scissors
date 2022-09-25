@@ -1,32 +1,41 @@
 function play(playerSelection,computerSelection) {
+    getComputerChoice();
+    computerSelection = getComputerChoice();
     let playChoice = window.prompt("Enter your move below");
     playerSelection = playChoice;
-    let compChoice = getComputerChoice();
-    computerSelection = compChoice;
 
-    if (playChoice.toLowerCase() === "rock" && compChoice === 1) {
+    if (playChoice.toLowerCase() === "rock" && computerSelection === 1) {
         return "You play rock, computer plays rock, it's a tie!";
-    } else if (playChoice.toLowerCase() === "rock" && compChoice === 2) {
-        return "You play rock, computer plays"
-    }
-     else if (playChoice.toLowerCase() === "paper") {
-        return "You play paper";
-    } else if (playChoice.toLowerCase() === "scissors") {
-        return "You play scissors";
+    } else if (playChoice.toLowerCase() === "rock" && computerSelection === 2) {
+        return `You play rock, computer plays paper. Computer wins!`
+    } else if (playChoice.toLowerCase() === "rock" && computerSelection === 3) {
+        return "You play rock, computer plays scissors. You win!"
+    } else if (playChoice.toLowerCase() === "paper" && computerSelection === 1) {
+        return "You play paper, computer plays rock.  You win!";
+    } else if (playChoice.toLowerCase() === "paper" && computerSelection === 2) {
+        return "You play paper, computer plays paper, it's a tie!"
+    } else if (playChoice.toLowerCase() === "paper" && computerSelection === 3) {
+        return "You play paper, computer plays scissors. Computer wins!"
+    } else if (playChoice.toLowerCase() === "scissors" && computerSelection === 1) {
+        return "You play scissors, computer plays rock. Computer wins!";
+    } else if (playChoice.toLowerCase() === "scissors" && computerSelection === 2) {
+        return "You play scissors, computer plays paper. You win!"
+    } else if (playChoice.toLowerCase() === "scissors" && computerSelection === 3) {
+        return "You play scissors, computer plays scissors, it's a tie!"
     } else {
         return "What?";
     }
     }
 
-    function getComputerChoice(choice) {
+    function getComputerChoice(choice) {  //Computer logic for selecting a move
         choice = Math.floor(Math.random() * 3) + 1;
     
         switch (choice) {
             case 1:
-                return "Rock!";
+                return 1;  //Rock value
             case 2:
-                return "Paper!";
+                return 2;  //Paper value
             case 3:
-                return "Scissors!";
+                return 3;  //Scissors value
         }
     }
