@@ -1,9 +1,10 @@
 function play(playerSelection,computerSelection) {
-    getComputerChoice();
-    computerSelection = getComputerChoice();
-    let playChoice = window.prompt("Enter your move below");
-    playerSelection = playChoice;
+    getComputerChoice();  //Step one: get input from the computer
+    computerSelection = getComputerChoice(); //Step two: assign computer input as arg
+    let playChoice = window.prompt("Enter your move below"); //Step three: get user input
+    playerSelection = playChoice; //Step four: assign user input as arg
 
+    //This code block lays out all possible outcomes and a fallback condition for unacceptable inputs
     if (playChoice.toLowerCase() === "rock" && computerSelection === 1) {
         return "You play rock, computer plays rock, it's a tie!";
     } else if (playChoice.toLowerCase() === "rock" && computerSelection === 2) {
