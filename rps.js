@@ -59,10 +59,10 @@ function play(playerSelection,computerSelection) {
             + " The player wins!";
         } else if (playerScore < computerScore) {
             return "The player scored " + playerScore + " and the computer scored " + computerScore + "."
-            + " The computer wins!"
+            + " The computer wins!";
         } else {
             return "The player scored " + playerScore + " and the computer score " + computerScore + "."
-            + " It's a tie!  Play again!"
+            + " It's a tie!  Play again!";
         }
 
     }
