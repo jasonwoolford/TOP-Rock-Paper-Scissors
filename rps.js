@@ -1,3 +1,31 @@
+//For the DOM
+const mainContainer = document.querySelector('#main');
+document.body.appendChild(mainContainer);
+
+const section1 = document.createElement('div');
+section1.classList.add('section1');
+section1.textContent = "Hello!  Click a button for your selection";
+mainContainer.appendChild(section1);
+
+const section2 = document.createElement('div');
+section2.classList.add('section2');
+mainContainer.appendChild(section2);
+
+const rockButton = document.createElement("button");
+rockButton.classList.add('rockButton');
+rockButton.textContent = "Rock!";
+const paperButton = document.createElement("button");
+paperButton.classList.add('paperButton');
+paperButton.textContent = "Paper!";
+const scissorsButton = document.createElement("button");
+scissorsButton.classList.add('scissorsButton');
+scissorsButton.textContent = "Scissors!";
+section2.appendChild(rockButton);
+section2.appendChild(paperButton);
+section2.appendChild(scissorsButton);
+
+rockButton.addEventListener('click', function play(rock,){});
+
 function play(playerSelection,computerSelection) {
     getComputerChoice();  //Step one: get input from the computer
     computerSelection = getComputerChoice(); //Step two: assign computer input as arg
@@ -47,6 +75,7 @@ function play(playerSelection,computerSelection) {
         }
     }
 
+    /*
     function game() { //This function runs the play function five times, keeps score of the players, and declares a final winner after the final loop.
         playerScore = 0;
         computerScore = 0;
@@ -66,3 +95,4 @@ function play(playerSelection,computerSelection) {
         }
 
     }
+    */
