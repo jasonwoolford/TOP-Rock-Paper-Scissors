@@ -24,6 +24,16 @@ section2.appendChild(rockButton);
 section2.appendChild(paperButton);
 section2.appendChild(scissorsButton);
 
+const section3 = document.createElement('div');
+section3.classList.add('section3');
+section3.textContent = "Results here"
+section3.style.backgroundColor = 'pink'
+mainContainer.appendChild(section3);
+
+const sec3p = document.createElement('p');
+sec3p.classList.add('sec3p');
+section3.appendChild(sec3p);
+
 
 
 function getComputerChoice(choice) {  //Computer logic for selecting a move
@@ -41,10 +51,8 @@ function getComputerChoice(choice) {  //Computer logic for selecting a move
 }
 
 function play(playerSelection,computerSelection) {
-    //getComputerChoice();  //Step one: get input from the computer
-    computerSelection = getComputerChoice(); //Step two: assign computer input as arg
-    playChoice = playerSelection; //Step three: get user input
-    playerSelection = playChoice; //Step four: assign user input as arg
+    computerSelection = getComputerChoice(); //Step one: assign computer input as arg
+    playChoice = playerSelection; //Step two: get user input
 
     let playerScore = 0;
     let computerScore = 0;
@@ -79,7 +87,6 @@ function play(playerSelection,computerSelection) {
     }
     }
 
-    /*
     function game() { //This function runs the play function five times, keeps score of the players, and declares a final winner after the final loop.
         playerScore = 0;
         computerScore = 0;
@@ -99,10 +106,11 @@ function play(playerSelection,computerSelection) {
         }
 
     }
-    */
 
     rockButton.addEventListener('click', function() {
-        console.log(play("rock"));
+        let result = "";
+        result = play("rock");
+        sec3p.textContent = result;
     });
     
     paperButton.addEventListener('click', function(){
