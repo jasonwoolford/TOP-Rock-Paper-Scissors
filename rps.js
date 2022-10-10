@@ -30,9 +30,9 @@ section3.textContent = "Results here"
 section3.style.backgroundColor = 'pink'
 mainContainer.appendChild(section3);
 
-const sec3p = document.createElement('p');
-sec3p.classList.add('sec3p');
-section3.appendChild(sec3p);
+const sec3list = document.createElement('ul');
+sec3list.classList.add('sec3p');
+section3.appendChild(sec3list);
 
 
 
@@ -110,13 +110,17 @@ function play(playerSelection,computerSelection) {
     rockButton.addEventListener('click', function() {
         let result = "";
         result = play("rock");
-        sec3p.textContent = result;
+        sec3list.textContent = result;
     });
     
     paperButton.addEventListener('click', function(){
-        console.log(play("paper"));
+        let result = "";
+        result = play("paper");
+        sec3list.textContent = result;
     });
 
     scissorsButton.addEventListener('click', function(){
-        console.log(play("scissors"));
+        let result = "";
+        result = play("scissors");
+        sec3list.textContent = result;
     });
