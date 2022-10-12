@@ -38,9 +38,17 @@ const section4 = document.createElement('div');
 section4.classList.add('section4');
 mainContainer.appendChild(section4);
 
+const section5 = document.createElement('div');
+section5.classList.add('section5');
+mainContainer.appendChild(section5);
+const resetButton = document.createElement("button");
+resetButton.classList.add('resetButton');
+resetButton.textContent = "Reset scores :)"
+section5.appendChild(resetButton);
+
 //Global Values
-playerScore = 0;
-computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice(choice) {  //Computer logic for selecting a move
     choice = Math.floor(Math.random() * 3) + 1;
@@ -88,11 +96,8 @@ function play(playerSelection,computerSelection) {
     } else {
         return "What?";
     }
-    }
-function resetScore() {
-    playerscore = 0;
-    computerScore = 0;
 }
+
 function compare() {
     if (playerScore === 5) {
         return "Player reached five wins!  Player wins!";
@@ -102,25 +107,11 @@ function compare() {
         return "Current player score is " + playerScore + " and the current computer score is " + computerScore;
     }
 }
-    function game() { //This function runs the play function five times, keeps score of the players, and declares a final winner after the final loop.
-        playerScore = 0;
-        computerScore = 0;
-        for (let i = 0; i < 5; i++) {
-            play();
-        }
 
-        if (playerScore > computerScore) {
-            return "The player scored " + playerScore + " and the computer scored " + computerScore + "."
-            + " The player wins!";
-        } else if (playerScore < computerScore) {
-            return "The player scored " + playerScore + " and the computer scored " + computerScore + "."
-            + " The computer wins!";
-        } else {
-            return "The player scored " + playerScore + " and the computer scored " + computerScore + "."
-            + " It's a tie!  Play again!";
-        }
-
-    }
+function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+}
 
 rockButton.addEventListener('click', function() {
     let result = "";
@@ -148,3 +139,8 @@ scissorsButton.addEventListener('click', function(){
     final = compare();
     section4.textContent = final; 
 });
+
+resetButton.addEventListener('click', function() {
+    resetScore();
+    section4.textContent = "Current player score is 0 and the current computer score is 0";
+})
